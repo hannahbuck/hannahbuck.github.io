@@ -1,0 +1,37 @@
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
+const inject = require('gulp-inject');
+const del = require('del');
+
+gulp.task('clean', () => {
+  clean('./css/');
+});
+
+gulp.task('styles', ['clean'], () => {
+  console.log('TESTING');
+  return gulp
+    .src('./store/*.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe(gulp.dest('./css/'));
+});
+
+gulp.task('inject', ['styles'], () => {
+  gulp.src('index.html')
+    .pipe(inject(gulp.src(['./css/**/*.css', './js/**/*.js'], {read: false}), {
+      addRootSlash: false
+    }))
+    .pipe(gulp.dest(''));
+});
+
+gulp.task('watch', ['inject'], () => {
+  return gulp.watch('./**/*.scss', ['inject']);
+});
+
+function clean(path) {
+  console.log('Cleaning: ' + (path));
+  del(path);
+}

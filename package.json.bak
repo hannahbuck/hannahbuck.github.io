@@ -1,0 +1,29 @@
+{
+  "name": "pretty-text-and-contents-template",
+  "version": "1.0.0",
+  "description": "CAU",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finnhodgkin/pretty-text-and-contents-template.git"
+  },
+  "author": "Finn Hodgkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finnhodgkin/pretty-text-and-contents-template/issues"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-inject": "^4.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^2.0.0"
+  },
+  "homepage": "https://github.com/finnhodgkin/pretty-text-and-contents-template#readme"
+}
